@@ -18,6 +18,22 @@ docker compose up
 
 See the project files for configuration details.
 
+## Security
+
+### Environment Variables
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `PORT` | `3000` | Port the HTTP server listens on |
+
+Copy `.env.example` to `.env` and adjust values before running. Never commit `.env` to version control.
+
+### Production Checklist
+
+- Set `NODE_ENV=production` when deploying to production environments.
+- Run the server behind a reverse proxy (e.g., Nginx, Caddy) that terminates TLS — the app does not handle HTTPS directly.
+- Do not expose the server port publicly without TLS termination.
+
 ---
 
 ### Maintained by [StackBlaze](https://stackblaze.com)
